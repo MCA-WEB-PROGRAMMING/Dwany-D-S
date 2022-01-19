@@ -80,7 +80,7 @@
         {
             echo"enter your name";
         }
-        elseif($phn==""||strlen($phn)<10)
+        elseif($phn==""||strlen($phn)!=10)
         {
             echo" enter phone number";
         }
