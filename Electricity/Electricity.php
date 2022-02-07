@@ -20,7 +20,7 @@
             <option>Select</option>
             <option>Rural</option>
             <option>Commercial</option>
-<option>Residential</option>
+            <option>Residential</option>
 </select>
 </td>
 </tr>
