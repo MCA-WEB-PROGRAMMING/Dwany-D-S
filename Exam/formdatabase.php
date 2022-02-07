@@ -12,7 +12,7 @@
     <td align="left">
     <label>Name:</label>
     </td>
-    <td align="left"><input type="text" name="name" size=18 autofocus="required"  placeholder="enter your name "></td>
+    <td align="left"><input type="text" name="na" size=18 autofocus="required"  placeholder="enter your name "></td>
     <tr>
     <td align="left">
     <label>Age:</label>
@@ -67,7 +67,7 @@
     <?php
     if(isset($_POST["submit"]))
     {
-        $name=$_POST['name'];
+        $name=$_POST['na'];
         $phn=$_POST['phn'];
         $email=$_POST['email'];
         $user=$_POST['user'];
@@ -76,6 +76,7 @@
         $lower=preg_match('@[a-z]@',$pass);
         $spcl=preg_match('@[#$%^&*!]@',$pass);
         $dig=preg_match('@[0-9]@',$pass);
+        $conn=mysqli_connect("localhost","root","","form_db");
         if($name=="")
         {
             echo"enter your name";
@@ -107,6 +108,29 @@
         else{
             echo"WELCOME";
         }
+    $query="INSERT INTO form(name,phn,email,user,password)VALUES('{$name}',{$phn},'{$email}','{$user}','{$pass}')";
+    if(mysqli_query($conn,$query))
+    {
+        echo("successfully inserted");
+        echo"<br>";
 
+    }
+    else{
+        echo("insertion failed");
+        echo"<br>";
+    }
+    $search="SELECT * FROM form";
+    $data=mysqli_query($conn,$search);
+    echo "<div style='position:absolute;top:95%';><table border='1'><tr><th>NAME</th><th>Phoneno</th><th>Email</th><th>User</th><th>password</th></tr>";
+    while($res=mysqli_fetch_assoc($data))
+    { echo "<tr>";
+       echo "<th>". $res['name']."</th>";
+       echo "<th>".$res['phn']."</th>";
+       echo "<th>".$res['email']."</th>";
+       echo "<th>".$res['user']."</th>";
+       echo "<th>".$res['password']."</th>"; 
+       echo "</tr>";
+    }
+    echo "</table></div>";
     }
     ?>
