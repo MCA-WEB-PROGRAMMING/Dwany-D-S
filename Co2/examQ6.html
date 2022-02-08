@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Exam</title>
+        <script>
+            function check()
+            {
+                var score=0;
+                if(document.getElementById("html").checked)
+                {
+                    score++;
+
+                }
+                if(document.getElementById("4c").checked)
+                {
+                    score++;
+                }
+                if(document.getElementById("altr").checked)
+                {
+                    score++;
+                }
+                if(document.getElementById("rad").checked)
+                {
+                    score++;
+                }
+                document.write("sore is "+score);
+
+            }
+        </script>
+    </head>
+    <body>
+        <form name="exam">
+            <table cellpadding ="10px">
+                <tr>
+                    <th>QUESTIONS</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Option A</th>
+                    <th>Option B</th>
+                    <th>Option C</th>
+                    <th>Option D</th>
+                </tr>
+
+                <tr>
+                <th align="left">1.HTMl stands for?</th>
+                <th><input type="radio" name ="1" id="tl"> Text language</th>
+                <th><input type="radio" name="1" id="ml"> Markup language</th>
+              <th><input type="radio" name="1" id="html">Hyper Text markup language</th> 
+               <th><input type="radio" name="1" id="pl">programming language</th> 
+ 
+            </tr>
+            <tr>
+                <th align="left">2.Images are inserted using which tag?</th>
+                <th><input type="radio" name ="2" id="ptag">pic tag</th>
+                <th><input type="radio" name="2" id="3c">img tag</th>
+              <th><input type="radio" name="2" id="4c">image tag</th> 
+               <th><input type="radio" name="2" id="5c">backgroung tag</th> 
+            
+            </tr>
+            <tr>
+                <th align="left">3.Display alternative text in  html</th>
+                <th><input type="radio" name ="3" id="altr">alter</th>
+                <th><input type="radio" name="3" id="txt">text</th>
+              <th><input type="radio" name="3" id="rp">replace</th> 
+               <th><input type="radio" name="3" id="c">comment</th> 
+            
+            </tr>
+            <tr>
+                <th align="left">4.radio butteon is inserted using </th>
+                <th><input type="radio" name ="4" id="rad">radio</th>
+                <th><input type="radio" name="4" id="tx">text</th>
+              <th><input type="radio" name="4" id="ck">checkbox</th> 
+               <th><input type="radio" name="4" id="s">select</th> 
+            
+            </tr>
+            
+              <tr><td><input type="reset" name="clear" value="clear"></td>
+          <td><input type="button" name="submit" value="submit" id="submit" onclick="check()"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

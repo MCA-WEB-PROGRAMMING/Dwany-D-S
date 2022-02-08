@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>form</title>
+<style>
+body{
+background-image: url("image.jpg");
+background-size: cover;
+}
+table{
+font-size: x-large;
+}
+</style>
+<script>
+    function check()
+    {
+        var name =document.form.name.value;
+        var email=document.form.email.value;
+        var password=document.form.password.value;
+        var user=document.form.user.value;
+        var phn=document.form.phn.value;
+        var re=/^(?=.*\d)(?=.*[@!#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+        var ren=/[0-9!@#$%&*]/
+         
+        if(name=="")
+        {
+            alert("Enter valid name");
+            document.form.name.focus();
+            return false;
+        }
+        else if(ren.test(name))
+        {
+            alert("enter name in correct format");
+            document.form.name.focus();
+            return false;
+
+        }
+        // else if(name.length<6 || name.length>15)
+        //     {
+        //      alert("name length must be between 6-15");
+        //     return false;
+       // }
+        if (phn == "") 
+        {
+                alert("Enter Mobile number");
+                return false;
+            }
+            else if (isNaN(phn))
+             {
+                alert("Enter valid Mobile number");
+                return false;
+            }
+            else if (phn.length != 10) 
+            {
+                alert("Enter Mobile number with 10 digit");
+                return false;
+            } 
+            if(email=="" || email.length<6 || email.length>20)
+            {
+                    alert("Enter a valid email");
+                    return false;
+                } 
+                if(user=="")
+                 {
+                    alert("Enter valid name");
+            document.form.user.focus();
+            return false;
+            }
+         if(password==""||password.length<8||!re.test(password))
+        {
+            alert("wrong password" + '\n' + "Atleast one Lowercase & uppercase & digti & special charecter must be included");
+            document.form.password.focus();
+            return false;
+        }        
+                   
+        }
+</script>
+</head>
+
+<body bgcolor="grey">
+<center><br>
+<h1>FORM VALIDATION</h1>
+</center>
+
+<form name="form">
+
+<table cellspacing="20" align="center" style="background-color: lightblue;" >
+<tr>
+<td align="left">
+<label>Name:</label>
+</td>
+<td align="left"><input type="text" name="name" size=18 autofocus="required"  placeholder="enter your name "></td></tr>
+<tr>
+<td align="left">
+<label>Age:</label>
+</td>
+<td align="left"><input type="text"  name="age" autofocus="required"  placeholder="enter your age"></td>
+</tr>
+<tr>
+<tr>
+    <td align="left" >
+    <label >Phone</label></td><br>
+    <td>
+    <input type="tel" name="phn" placeholder=" 10 digits" autofocus="required" ></td>
+</tr>
+<tr>
+<td align="left">
+<label>Gender:</label>
+</td>
+<td align="left"><input type="radio" name="gender" value="female" checked="true">Female
+<input type="radio" name="gender" value="male" checked="true">Male</td>
+</tr>
+<tr>
+<td align="left">
+<label>Email Id:</label>
+</td>
+<td align="left"><input type="email"  name="email"  placeholder="email"></td>
+</tr>
+
+<tr>
+    <td align="left">
+    <label>Username:</label>
+    </td>
+    <td>
+        <input type="text" name="user" placeholder="username"  autofocus="required" > 
+        </td>
+        </tr>
+<tr>
+<td>
+<label>Password:</label>
+</td>
+<td>
+<input type="password" name="password"  autofocus="required" placeholder="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+</td>
+</tr>
+<tr>
+<td><input type="reset" name="clear" value="clear"></td>
+<td><input type="submit" name="submit" value="submit" id="submit" onclick="check()"></td>
+</tr>
+</tr>
+</form>
+</body>
+</html>

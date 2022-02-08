@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            mouse over
+        </title>
+            <style>
+                .data{
+                    text-align: center;
+                }
+                .content{
+                    display: block; 
+                    align-items: center;
+
+                }
+                #heading1{
+                    display:none;
+                    text-align: center;
+                }
+                #hedaing2{
+                    display:none;
+                    text-align: center;
+                }
+
+            </style>
+
+        </head>
+        <body>
+            <div class="content" id="content">
+            <img src="pic.jpg" id ="pic"><br>
+            <div class="data">
+                <h3 id="heading1">The function change1 is triggered when the user moves the mouse pointer over here </h3>
+                <h3 id="heading2">The function change2 is triggered when the mouse pointer is moved out of the image.</h3>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("content").addEventListener("mouseover",change1);
+            document.getElementById("content").addEventListener("mouseout",change2);
+            function change1()
+            {
+                document.getElementById("pic").src="pic.jpg";
+                document.getElementById("heading1").style.display="none";
+                document.getElementById("heading2").style.display="block";
+            
+            }
+            function change2()
+            {
+                document.getElementById("pic").src="mousepic.jpg";
+                document.getElementById("heading1").style.display="block";
+                document.getElementById("heading2").style.display="none";
+
+            }
+        </script>
+        </body>
+</html>
