@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+function check()
+{
+var name=document.form.name.value;
+var phn=document.form.phn.value;
+var passwd=document.form.passwd.value;
+var email=document.form.email.value;
+var username=document.form.username.value;
+var branch=document.form.branch.value;
+var ren=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*].{8,})$/
+var re=/[0-9!@#$%^&*]/
+ if(name==" ")
+ {
+     alert("enter your name");
+     document.form.name.focus();
+     return false;
+
+ }
+ else if(re.test(name))
+ {
+    alert("enter your name");
+     document.form.name.focus();
+     return false;
+ }
+ if(passwd=="")
+ {
+    alert("enter your password");
+     document.form.passwd.focus();
+     return false;
+ }
+ else if(!ren.test(passwd))
+ {
+    alert("password must have one lowercase,uppercase,digit and special character");
+     document.form.passwd.focus();
+     return false;
+ }
+ if(email=="")
+ {
+    alert("enter your email id");
+     document.form.email.focus();
+     return false;
+ }
+if(username=="")
+{
+    alert("enter your username");
+     document.form.username.focus();
+     return false;
+}
+if(branch=="")
+{
+    alert("enter your username");
+     document.form.username.focus();
+     return false;
+}
+else
+{
+    alert("WELCOME"); 
+}
+}
+ </script>
+
+
+</head>
+<body bgcolor="lightblue">
+    <center>
+
+    
+    <h1 style="color:coral;"><em><b>College Registration Form</b></em></h1>
+    <form name="form">
+        <table cellpadding="4" cellspacing="5" bgcolor="pink">
+            <tr>
+                <td>Name:</td><td><input type="text" name="name" placeholder="enter your name" autofocus="required"></td>
+            </tr>
+            <tr>
+                <td>Phone No:</td><td><input type="tel" name="phn" placeholder="enter your phone no." autofocus="required"></td>
+            </tr>
+            <tr>
+                <td>Password:</td><td><input type="password" name="passwd" placeholder="enter your password" autofocus="required"></td>
+            </tr>
+
+            <tr>
+            <td>Email ID:</td><td><input type="email" name="email" title="must include @ " placeholder="email id" autofocus="required"></td>
+            </tr>
+
+
+
+            <tr>
+                <td>Username</td><td><input type="text" name="user" placeholder="enter your username"autofocus="required"></td>
+            </tr>
+            <tr>
+                <td>Branch</td><td>
+                    <select name="branch"value="branch">
+                    <option value="">MCA</option>
+                    <option value="MCA">BBA</option>
+                    <option value="MCOM">MCOM</option>
+                    <option value="MBA">MBA</option>
+                    <option value="Engineering">Engineering</option>
+                    </select>
+                    </td>
+
+            </tr>
+            <tr>
+                <td>Semester</td><td>
+                    <select name="sem"value="sem">
+           
+                    <option value="1st">1st</option>
+                    <option value="2nfd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
+
+                    </select>
+                    </td>
+            </tr>
+            <tr>
+                <td><input type="reset" name="reset" value="reset">
+                </td>
+                <td align="center">
+                    <input type="submit" name="submit" value="submit" onclick="check()">
+                </td>
+            </tr>
+        </table>
+    </form></center>
+</body>
+</html>
